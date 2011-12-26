@@ -2,9 +2,219 @@
 @include global-reset;
 @include reset-html5;
 
-@import "custom/colors";
-@import "custom/fonts";
-@import "custom/layout";
-@import "base";
-@import "partials";
-@import "custom/styles";
+/* ========== */
+/* = Mixins = */
+/* ========== */
+
+@mixin centered-content {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+}
+
+@mixin small-text {
+  font-size: 11px;
+  line-height: $base-line-height;
+  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ============== */
+/* = Typography = */
+/* ============== */
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+$serifs: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+$red: #a70000;
+
+@include establish-baseline;
+@include font-face(
+  "LeagueGothicRegular",
+  font-files(
+    "League_Gothic-webfont.eot", embedded-opentype,
+    "League_Gothic-webfont.woff", woff,
+    "League_Gothic-webfont.ttf", truetype,
+    "League_Gothic-webfont.svg", svg
+  ),
+  "/fonts/League_Gothic-webfont.eot"
+);
+
+body {
+  font-family: $serifs;
+}
+
+a {
+  @include hover-link;
+  color: $red;
+
+  &:hover {
+    color: adjust-lightness( $red, -10 );
+  }
+
+  &:active {
+    color: adjust-lightness( $red, 15 );
+  }
+
+  &:visited {
+    color: adjust-lightness( $red, -5 );
+  }
+}
+
+h1, h2, h3 {
+  font-family: "LeagueGothicRegular", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  line-height: $base-line-height;
+
+  a, a:hover, a:visited {
+    color: black;
+  }
+
+  a:active {
+    color: adjust-lightness( black, 30 );
+  }
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+i, em {
+  font-style: italic;
+}
+
+/* ========== */
+/* = Header = */
+/* ========== */
+
+header {
+  height: $base-line-height * 8;
+  background: #fff image-url("header.png") 50% 0% repeat-x;
+  margin-bottom: $base-line-height * 3;
+
+  h1 a {
+    position: relative;
+    top: 70px;
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    @include hide-text;
+  }
+}
+
+/* =========== */
+/* = Content = */
+/* =========== */
+
+#content {
+  @include centered-content;
+
+  h1.entry-title {
+    font-size: 26px;
+    line-height: $base-line-height;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: $base-line-height;
+
+    span.meta {
+      @include small-text;
+      @include inline-block;
+      padding-left: 5px;
+      color: #999;
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  article {
+    margin-bottom: $base-line-height;
+  }
+
+  p {
+    margin: $base-line-height / 2 0;
+  }
+
+  ul, ol {
+    padding-left: 22px;
+    margin: $base-line-height 0;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  h2, h3,
+  #blog-archives h1, h2, h3 {
+    font-family: $serifs;
+    font-size: $base-font-size;
+    margin: $base-line-height 0 $base-line-height / 2;
+  }
+
+  h2, #blog-archives h2 {
+    font-weight: bold;
+  }
+
+  h3 {
+    font-style: italic;
+  }
+
+  #blog-archives {
+    article {
+      position: relative;
+      margin: 0 0 $base-line-height / 2;
+
+      h1 {
+        margin: 0;
+        line-height: 1;
+        a {
+          color: $red;
+        }
+        time {
+          @include small-text;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+/* ============== */
+/* = Navigation = */
+/* ============== */
+
+div.pagination {
+  @include clearfix;
+  margin: $base-line-height 0;
+  a.next {
+    float: right;
+  }
+}
+
+/* ========== */
+/* = Footer = */
+/* ========== */
+
+footer#navigation {
+  @include centered-content;
+  margin: $base-line-height / 2 auto;
+  padding-top: $base-line-height / 2;
+  border-top: 1px dotted #ddd;
+  margin-bottom: $base-line-height * 4;
+  font-size: 13px;
+  color: #666;
+
+  ul {
+    text-align: center;
+    li {
+      @include inline-block;
+      margin: 0 8px;
+    }
+  }
+}
+
+/* DEBUG */
+/*@import "compass/layout/grid-background";
+body {
+  @include baseline-grid-background( $base-line-height, #ddd );
+}*/
