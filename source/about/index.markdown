@@ -4,4 +4,6 @@ title: "About TysonTate.com"
 date: 2011-12-25 22:02
 ---
 
-Put some about me content here.
+I'm Tyson Tate. A programmer of ill repute in San Francisco. I am easily amused.
+
+This is my blog.
