@@ -213,6 +213,32 @@ footer#navigation {
   }
 }
 
+/* ==================== */
+/* = Mobile overrides = */
+/* ==================== */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 569px) {
+  #content {
+    h1.entry-title {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+  }
+  footer#navigation {
+    font-size: 26px;
+    line-height: 1.3;
+    ul {
+      li {
+        display: block;
+        padding: 15px 0;
+      }
+      li:last-child {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 /* DEBUG */
 /*@import "compass/layout/grid-background";
 body {
