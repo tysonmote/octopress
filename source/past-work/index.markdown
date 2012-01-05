@@ -68,7 +68,7 @@ I have a few open-source projects that I enjoy hacking on in my spare time. Some
 
 # Design
 
-I created the following projects while earning my BFA in Art and Design and CalPoly in San Luis Obispo, California.
+I created the following projects while earning my BFA in Art and Design at CalPoly in San Luis Obispo, California.
 
 <div class="cols">
 
