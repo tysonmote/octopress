@@ -110,12 +110,22 @@ header {
 #content {
   @include centered-content;
 
+  h1 {
+    font-size: 22px;
+    line-height: $base-line-height;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: $base-line-height * 2 0 $base-line-height;
+    text-align: center;
+  }
+
   h1.entry-title {
     font-size: 26px;
     line-height: $base-line-height;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: $base-line-height;
+    margin-top: 0;
+    text-align: left;
 
     span.meta {
       @include small-text;
@@ -144,6 +154,10 @@ header {
     list-style: disc;
   }
 
+  code {
+    font-family: Courier, mono;
+  }
+
   h2, h3,
   #blog-archives h1, h2, h3 {
     font-family: $serifs;
@@ -157,6 +171,24 @@ header {
 
   h3 {
     font-style: italic;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  div.cols {
+    @include clearfix;
+  }
+
+  div.col-1,
+  div.col-2 {
+    float: left;
+    width: 290px;
+  }
+  div.col-1 {
+    margin-right: 20px;
   }
 
   #blog-archives {
