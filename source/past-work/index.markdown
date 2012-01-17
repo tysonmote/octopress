@@ -62,7 +62,7 @@ I have a few open-source projects that I enjoy hacking on in my spare time. Some
 
 [`rapper_lite`](https://github.com/tysontate/rapper_lite) -- A simple static asset (CSS, Sass, JavaScript, CoffeeScript) bundler and compression tool created as a simpler alternative to Sprockets and other similar tools for web frameworks without integrated static asset packaging tools (Sinatra, Merb, etc.)
 
-[`topo.js`](http://githib.com/tysontate/topo_js) -- A client-side message router for socket.io.
+[`socket-router`](https://github.com/stvp/socket-router) -- A client-side message router for socket.io.
 
 [`splashy`](https://github.com/tysontate/splashy) -- A Ruby gem that allows you to choose a constrained set of objects matching arbitrary percentage distributions from several different buckets of said objects.
 
