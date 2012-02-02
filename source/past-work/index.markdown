@@ -58,7 +58,7 @@ The [Santa Fe Writers Project](http://sfwp.com) is an independent publishing hou
 
 I have a few open-source projects that I enjoy hacking on in my spare time. Some include:
 
-[`rickshaw`](https://github.com/tysontate/Rickshaw) -- A lightweight MooTools-based client-side MVC framework with AJAX and LocalStorage persistence built-in. Written as more of a proof-of-concept more than anything else, but it turned out nicely thanks to MooTools's great classical-OOP functionality.
+[`rickshaw`](https://github.com/tysontate/Rickshaw) -- An in-progress lightweight MooTools-based client-side MVC framework that eliminates boilerplate and makes apps crazy-easy to create. This was originally written as something of a fun side project, but it ended up working out so well that I've started fleshing it out.
 
 [`rapper_lite`](https://github.com/tysontate/rapper_lite) -- A simple static asset (CSS, Sass, JavaScript, CoffeeScript) bundler and compression tool created as a simpler alternative to Sprockets and other similar tools for web frameworks without integrated static asset packaging tools (Sinatra, Merb, etc.)
 
