@@ -101,11 +101,3 @@ I created the following projects while earning my BFA in Art and Design at CalPo
 </div>
 
 </div>
-
-# Illustration
-
-## How CrowdFlower Works
-
-[![How CrowdFlower works](/images/past-work/6_how_crowdflower_works_thumb.png)](/images/past-work/6_how_crowdflower_works.png)
-
-A basic illustration of how [CrowdFlower](http://crowdflower.com) works created for a new user welcome page.
