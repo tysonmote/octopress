@@ -1,5 +1,7 @@
 # encoding: utf-8
-#
+require 'pry'
+require_relative 'post_filters'
+
 # Title: Footnotes Liquid Tag
 # Author: Felipe Cypriano <felipe@cypriano.me>
 # Modified: Tyson Tate <tyson@tysontate.com>
@@ -27,6 +29,21 @@
 #     </div>
 #
 
+module Jekyll
+  class FootnoteFilters < PostFilter
+    def post_render(post)
+      if post.is_a?( Jekyll::Post )
+        id = post.slug
+      else
+        path = post.full_url.split('/')[3..-1]
+        id = path.join('___').gsub(/_{3}?index\.[\w]+$/, '')
+        id = 'index' if id == ''
+      end
+      post.content.gsub!(/FOOTNOTE_ID/, id)
+    end
+  end
+end
+
 module Footnote
 
   class ReferenceTag < Liquid::Tag
@@ -37,7 +54,7 @@ module Footnote
 
     def render(context)
       unless @reference.nil?
-        "<sup id='fnref:#{@reference}'><a href='#fn:#{@reference}' rel='footnote'>#{@reference}</a></sup>"
+        "<sup id='fnref:FOOTNOTE_ID:#{@reference}'><a href='#fn:FOOTNOTE_ID:#{@reference}' rel='footnote'>#{@reference}</a></sup>"
       end
     end
   end
@@ -71,8 +88,8 @@ module Footnote
     def handle_fn_tag(params)
       ref_text = params
       @footnotes << <<-HTML
-        <li id="fn:#{@current_reference}">
-          #{ref_text}<a href='#fnref:#{@current_reference}' rev='footnote'>↩</a>
+        <li id="fn:FOOTNOTE_ID:#{@current_reference}">
+          #{ref_text}<a href='#fnref:FOOTNOTE_ID:#{@current_reference}' rev='footnote'>↩</a>
         </li>
       HTML
       @current_reference += 1
