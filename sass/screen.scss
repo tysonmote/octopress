@@ -90,6 +90,7 @@ i, em {
 header {
   height: $base-line-height * 8;
   background: #fff image-url("header.png") 50% 0% repeat-x;
+  @include background-size(100%);
   margin-bottom: $base-line-height * 3;
 
   h1 a {
