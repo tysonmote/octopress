@@ -43,4 +43,4 @@ titlecase: true       # Converts page and post titles to titlecase
 # ----------------------- #
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-30114622-1
