@@ -90,7 +90,6 @@ i, em {
 header {
   height: $base-line-height * 8;
   background: #fff image-url("header.png") 50% 0% repeat-x;
-  @include background-size(2000px);
   margin-bottom: $base-line-height * 3;
 
   h1 a {
@@ -269,6 +268,17 @@ footer#navigation {
         font-size: 20px;
       }
     }
+  }
+}
+
+/* ============================= */
+/* = High-resolution overrides = */
+/* ============================= */
+
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5) {
+  header {
+    background-image: image-url("header.png");
+    @include background-size(2000px);
   }
 }
 
