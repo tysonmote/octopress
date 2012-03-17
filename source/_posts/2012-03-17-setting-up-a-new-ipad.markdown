@@ -13,4 +13,4 @@ I bought the new iPad yesterday, and this was my entire setup process migrating 
 
 And that was it. If it wasn't for the new screen, I wouldn't be able to tell you which iPad was which.
 
-The setup process for my *alarm clock* requires more steps than that.
+The setup process for my *running watch* requires more steps than that.
