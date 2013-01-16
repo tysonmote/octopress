@@ -1,5 +1,4 @@
 # encoding: utf-8
-require 'pry'
 require_relative 'post_filters'
 
 # Title: Footnotes Liquid Tag
